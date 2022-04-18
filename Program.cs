@@ -41,4 +41,11 @@ var app = builder.Build();
     app.MapControllers();
 }
 
-app.Run("http://localhost:4000");
+if (app.Environment.IsDevelopment()) 
+{
+    app.Run();
+}
+else 
+{
+    app.Run("http://localhost:40000"); 
+}
